@@ -1,27 +1,309 @@
-# NextbankUi
+# NextBank UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+NextBank UI is the frontend application for the **NextBank** platform, built with **Angular 18**.
 
-## Development server
+The application consumes the REST APIs exposed by the **nextbank-api** backend.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+# Workspace Structure
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The frontend and backend are independent repositories, but they should be cloned into the **same workspace**.
 
-## Build
+Expected directory structure:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```text
+workspace/
+├── local-dev-infra/
+├── nextbank-api/
+└── nextbank-ui/
+```
 
-## Running unit tests
+If you already cloned **nextbank-api**, clone **nextbank-ui** into the same parent directory.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+# Prerequisites
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Before running the project, install the following tools:
 
-## Further help
+* Git
+* NVM (Node Version Manager)
+* Node.js 22 LTS
+* Angular CLI 18.2.21
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+<details>
+<summary><strong>MacOS Setup</strong></summary>
+
+## 1. Verify Git
+
+```bash
+git --version
+```
+
+If Git is not installed:
+
+```bash
+brew install git
+```
+
+---
+
+## 2. Verify NVM
+
+```bash
+nvm --version
+```
+
+If NVM is not installed, install it following the official NVM documentation.
+
+---
+
+## 3. Install Node.js 22 LTS
+
+```bash
+nvm install 22
+```
+
+Switch to Node 22:
+
+```bash
+nvm use 22
+```
+
+Verify:
+
+```bash
+node -v
+npm -v
+```
+
+Expected:
+
+```text
+v22.x.x
+```
+
+---
+
+## 4. Install Angular CLI 18
+
+First, verify if Angular CLI is already installed.
+
+```bash
+ng version
+```
+
+### If Angular CLI is not installed
+
+Install Angular CLI 18.2.21:
+
+```bash
+npm install -g @angular/cli@18.2.21
+```
+
+---
+
+### If Angular CLI is already installed
+
+Verify the version:
+
+```bash
+ng version
+```
+
+If the installed version is **18.2.21**, no further action is required.
+
+If the version is different, update it:
+
+```bash
+npm uninstall -g @angular/cli
+npm install -g @angular/cli@18.2.21
+```
+
+Verify again:
+
+```bash
+ng version
+```
+
+Expected:
+
+```text
+Angular CLI: 18.2.21
+```
+
+</details>
+
+---
+
+<details>
+<summary><strong>Windows Setup</strong></summary>
+
+## 1. Verify Git
+
+```bash
+git --version
+```
+
+If Git is not installed, install it from the official Git installer.
+
+---
+
+## 2. Install NVM for Windows
+
+Verify:
+
+```bash
+nvm version
+```
+
+If NVM is not installed, install **NVM for Windows**.
+
+---
+
+## 3. Install Node.js 22 LTS
+
+```bash
+nvm install 22
+```
+
+```bash
+nvm use 22
+```
+
+Verify:
+
+```bash
+node -v
+npm -v
+```
+
+Expected:
+
+```text
+v22.x.x
+```
+
+---
+
+## 4. Install Angular CLI 18
+
+Verify whether Angular CLI is already installed.
+
+```bash
+ng version
+```
+
+### If Angular CLI is not installed
+
+Install Angular CLI 18.2.21:
+
+```bash
+npm install -g @angular/cli@18.2.21
+```
+
+---
+
+### If Angular CLI is already installed
+
+Verify the version:
+
+```bash
+ng version
+```
+
+If the installed version is **18.2.21**, no further action is required.
+
+If the version is different, update it:
+
+```bash
+npm uninstall -g @angular/cli
+npm install -g @angular/cli@18.2.21
+```
+
+Verify again:
+
+```bash
+ng version
+```
+
+Expected:
+
+```text
+Angular CLI: 18.2.21
+```
+
+</details>
+
+---
+
+# Clone the Repository
+
+Navigate to your workspace.
+
+```bash
+cd <workspace>
+```
+
+Clone the repository.
+
+```bash
+git clone <repository-url>
+```
+
+Enter the project.
+
+```bash
+cd nextbank-ui
+```
+
+---
+
+# Select the Correct Node Version
+
+If you already have multiple Node.js versions installed, switch to the version supported by this project.
+
+```bash
+nvm use 22
+```
+
+Verify:
+
+```bash
+node -v
+```
+
+Expected:
+
+```text
+v22.x.x
+```
+
+---
+
+# Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+# Run the Application
+
+Start the Angular development server.
+
+```bash
+npm start
+```
+
+Open your browser and navigate to:
+
+```text
+http://localhost:4200
+```
+
+If the installation completed successfully, the default Angular application should load successfully.
