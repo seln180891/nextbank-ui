@@ -1,17 +1,21 @@
-import { Routes } from '@angular/router';
+  import { Routes } from '@angular/router';
 
-import { LoginComponent } from './pages/login/login.component';
-import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+  import { LoginComponent } from './pages/login/login.component';
+  import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+  import { RegisterComponent } from './pages/register/register.component';
+  export const AUTH_ROUTES: Routes = [
+    {
+      path: '',
+      component: LoginComponent
+    },
+    {
+      path: 'forgot-password',
+      component: ForgotPasswordComponent
+    },
+    {
+      path: 'register',
+      component: RegisterComponent
+    }
 
-export const AUTH_ROUTES: Routes = [
-  {
-    path: '',
-    component: LoginComponent
-  },
-  {
-    path: 'forgot-password',
-    component: ForgotPasswordComponent
-  }
-
-];
+  ];
   
